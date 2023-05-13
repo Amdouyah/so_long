@@ -1,38 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdouyah <amdouyah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 21:46:06 by amdouyah          #+#    #+#             */
-/*   Updated: 2023/05/12 12:03:21 by amdouyah         ###   ########.fr       */
+/*   Created: 2023/05/12 11:59:54 by amdouyah          #+#    #+#             */
+/*   Updated: 2023/05/12 12:02:30 by amdouyah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "get_next_line.h"
+void	exit_err(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
-typedef struct s_s {
-	int		size_y;
-	int		size_x;
-	char	**map;
-	char	**tst;
-	int		x;
-	int		y;
-}t_s
-;
+int size_colom(char **str)
+{
+	int i;
+	
+	i = 0;
+	while(str[i])
+		i++;
+	return(i); 	
+}
 
-char	**ft_split(char *s, char c);
-void	errors(t_s *s);
-void	emptyline(t_s *s);
-void	repeat(t_s *s, char c);
-void	return_pos(t_s *s);
-void	valid_path(char **s);
-void	exit_err(void);
-int 	size_colom(char **str);
-void	check_map(t_s *s);
+void	return_pos(t_s *s)
+{
+	int	i;
+	int	j;
 
-#endif
+	i = 0;
+	while (s->map[i])
+	{
+		j = 0;
+		while (s->map[i][j])
+		{
+			if (s->map[i][j] == 'P')
+			{
+				s->x = j;
+				s->y = i;
+			}
+			j++;
+		}
+		i++;
+	}
+}

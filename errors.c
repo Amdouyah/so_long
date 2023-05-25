@@ -6,7 +6,7 @@
 /*   By: amdouyah <amdouyah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:54:27 by amdouyah          #+#    #+#             */
-/*   Updated: 2023/05/12 12:08:20 by amdouyah         ###   ########.fr       */
+/*   Updated: 2023/05/22 23:42:07 by amdouyah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,27 @@ void	repeat(t_s *s, char c)
 	else if (c != 'C' && (index > 0 || index == -1))
 		exit_err();
 }
+
+void	c_c(t_s *s)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	s->counter_c = 0;
+	while(s->map[i])
+	{
+		j = 0;
+		while (s->map[i][j])
+		{
+			if (s->map[i][j] == 'C')
+				s->counter_c++;
+			j++;
+		}
+		i++;
+	}
+}
+
 void	errors(t_s *s)
 {
 	checkmap(s);
@@ -99,6 +120,6 @@ void	errors(t_s *s)
 	repeat(s, 'E');
 	repeat(s, 'P');
 	repeat(s, 'C');
-	
+	c_c(s);
 }
 

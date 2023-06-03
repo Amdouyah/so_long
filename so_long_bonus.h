@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdouyah <amdouyah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 21:46:06 by amdouyah          #+#    #+#             */
-/*   Updated: 2023/05/29 15:20:41 by amdouyah         ###   ########.fr       */
+/*   Created: 2023/05/26 21:45:33 by amdouyah          #+#    #+#             */
+/*   Updated: 2023/05/29 15:25:26 by amdouyah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
@@ -60,7 +60,6 @@ char	**ft_split(char *s, char c);
 void	errors(t_s *s);
 void	emptyline(t_s *s);
 void	repeat(t_s *s, char c);
-void	return_pos(t_s *s);
 void	valid_path(char **s, t_s *ts);
 void	exit_err(void);
 int		size_colom(char **str);
@@ -86,5 +85,6 @@ void	xpm_image_2(t_s *s, int i, int j);
 void	free__(t_s *s);
 void	free_2d(char **s);
 void	ft_inis(t_s *s);
+void	return_pos(t_s *s);
 
 #endif

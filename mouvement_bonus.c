@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouvement.c                                        :+:      :+:    :+:   */
+/*   mouvement_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdouyah <amdouyah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 23:18:28 by amdouyah          #+#    #+#             */
-/*   Updated: 2023/05/26 23:21:54 by amdouyah         ###   ########.fr       */
+/*   Updated: 2023/05/26 23:10:12 by amdouyah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	up(t_s *s)
 {
@@ -136,5 +136,6 @@ int	key(int keyh, t_s *s)
 		down(s);
 	if (keyh == 2 || keyh == 124)
 		right(s);
+	kteb(s);
 	return (0);
 }
